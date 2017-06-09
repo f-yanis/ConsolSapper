@@ -35,16 +35,19 @@ public class Cell {
     }
 
     public String drowCell() {
-        if (!open && mark){
-            return "[!]";
+        String cellSkin = null;
+
+        if (!open && mark) {
+            cellSkin = "[!]";
         } else if (!open) {
-            return "[ ]";
+            cellSkin = "[ ]";
         } else if (open && bomb) {
-            return "[*]";
+            cellSkin = "[*]";
         } else if (open && !bomb) {
-            return "[" + bombInNextCell + "]";
+            cellSkin = "[" + bombInNextCell + "]";
         }
-        return "12";
+
+        return cellSkin;
     }
 
 }

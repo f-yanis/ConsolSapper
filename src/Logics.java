@@ -4,11 +4,12 @@ public class Logics {
     private Random random = new Random();
     private Board board = new Board();
     private int fieldSize = board.getFieldSize();
+    private Cell[][] cells = new Cell[fieldSize][fieldSize];
     private int numbersOfBomb = 5;
     private int emptyCell = fieldSize * fieldSize - numbersOfBomb;
     private int openEmptyCell;
     private boolean kill;
-    private Cell[][] cells = new Cell[fieldSize][fieldSize];
+
 
     public void start() {
         initCells();
