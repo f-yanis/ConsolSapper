@@ -1,3 +1,6 @@
+/**
+ * Этот класс описывает состояние ячейки на доске.
+ */
 public class Cell {
     private boolean bomb, mark, open;
     private int bombInNextCell;
@@ -34,6 +37,9 @@ public class Cell {
         this.bombInNextCell = bombInNextCell;
     }
 
+    /**Метод отрисовывает состояние ячейки.
+     * @return cellSkin
+     */
     public String drowCell() {
         String cellSkin = null;
 

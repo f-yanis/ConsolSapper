@@ -1,5 +1,8 @@
 import java.util.*;
 
+/**
+ * Класс содержит логигу игры.
+ */
 public class Logics {
     private Random random = new Random();
     private Board board = new Board();
@@ -33,6 +36,10 @@ public class Logics {
     }
 
 
+    /**
+     * Метод инициализирует каждую ячейку.
+     * Расставляет мины и считает количество мин вокруг ячейки.
+     */
     public void initCells() {
         for (int i = 0; i < fieldSize; i++) {
             for (int j = 0; j < fieldSize; j++) {
@@ -71,6 +78,9 @@ public class Logics {
         }
     }
 
+    /**
+     * Метод получает координаты ячейки и вносит изменения в состояние ячейки.
+     */
     public void playerProgress() {
         int x = Integer.parseInt(GamerStep.step("Введите координаты оси y: "));
         int y = Integer.parseInt(GamerStep.step("Введите координаты оси x: "));
@@ -80,7 +90,7 @@ public class Logics {
             if (!cells[x][y].isMark()) {
                 cells[x][y].setMark(true);
             }
-        }else if (!cells[x][y].isOpen()) {
+        } else if (!cells[x][y].isOpen()) {
             cells[x][y].setOpen(true);
             openEmptyCell++;
         }
@@ -91,6 +101,7 @@ public class Logics {
                     cells[i][j].setOpen(true);
                 }
             }
+
             kill = true;
         }
     }
